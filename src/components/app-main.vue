@@ -3,7 +3,7 @@
       <el-container>
         <el-aside width="20%"><app-aside></app-aside></el-aside>
         <el-container>
-          <el-header height="90px">
+          <el-header height="120px">
             <app-header></app-header>
           </el-header>
           <el-main> <app-content></app-content></el-main>
