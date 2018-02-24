@@ -5,20 +5,17 @@
     </div>
     <div class="nav">
      <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal"
-     background-color="#f5f5f5"
-     active-text-color="black"
      >
-        <el-menu-item index="1">首页</el-menu-item>
-       <el-menu-item index="2">博客</el-menu-item>
-       <el-menu-item index="3">分享</el-menu-item>
-       <el-menu-item index="4">留言</el-menu-item>
-        <el-submenu index="5">
+       <el-menu-item index="1"><router-link to="/">首页</router-link></el-menu-item>
+       <el-menu-item index="2"><router-link :to="{name: 'pageDetail', query: {pageId: 1}}">博客</router-link></el-menu-item>
+       <el-menu-item index="3"><router-link :to="{name:'appMain'}">资源分享</router-link></el-menu-item>
+        <el-submenu index="4">
           <template slot="title">个人中心</template>
-          <el-menu-item index="5-1">选项1</el-menu-item>
-          <el-menu-item index="5-2">选项2</el-menu-item>
-          <el-menu-item index="5-3">选项3</el-menu-item>
+          <el-menu-item index="4-1">选项1</el-menu-item>
+          <el-menu-item index="4-2">选项2</el-menu-item>
+          <el-menu-item index="4-3">选项3</el-menu-item>
         </el-submenu>
-        <el-menu-item index="6"><a href="https://www.ele.me" target="_blank">后台管理</a></el-menu-item>
+        <el-menu-item index="5"><router-link :to="{name:'appMain'}">后台管理</router-link></el-menu-item>
       </el-menu>
     </div>
   </div>
@@ -39,9 +36,9 @@ export default {
     .header {
       width: 100%;
       height: 90px;
-      background-color: #f5f5f5;
       display: flex;
       justify-content: space-between;
+      box-shadow: 1px 2px 3px #eee;
       .logo {
         width: 30%;
         span {
@@ -54,6 +51,7 @@ export default {
         height: 60px;
         .el-menu-demo {
           margin: 17px;
+          border-bottom: 0px;
         }
       }
     }

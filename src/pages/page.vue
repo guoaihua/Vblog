@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <hr>
+    <span class="line"></span>
     <el-container style="height: 250px">
       <el-aside width="300px">
           <div class="pic">
@@ -8,14 +8,14 @@
           </div>
       </el-aside>
       <el-container>
-        <el-header height="40px">Header</el-header>
+        <el-header height="40px">清风徐来水波不兴</el-header>
         <el-main>
           <p><router-link :to="{name:'pageDetail',query:{pageId:1}}">{{text}}</router-link></p>
         </el-main>
         <el-footer height="40px">Footer</el-footer>
       </el-container>
     </el-container>
-    <hr>
+    <span class="line"></span>
     <el-container style="height: 250px">
       <el-aside width="300px">
         <div class="pic">
@@ -23,14 +23,14 @@
         </div>
       </el-aside>
       <el-container>
-        <el-header height="40px">Header</el-header>
+        <el-header height="40px">清风徐来水波不兴</el-header>
         <el-main>
           <p><router-link :to="{name:'pageDetail',query:{pageId:2}}">{{text}}</router-link></p>
         </el-main>
         <el-footer height="40px">Footer</el-footer>
       </el-container>
     </el-container>
-    <hr>
+    <span class="line"></span>
     <el-container style="height: 250px">
       <el-aside width="300px">
         <div class="pic">
@@ -38,7 +38,7 @@
         </div>
       </el-aside>
       <el-container>
-        <el-header height="40px">Header</el-header>
+        <el-header height="40px">清风徐来水波不兴</el-header>
         <el-main>
           <p><router-link :to="{name:'pageDetail',query:{pageId:3}}">{{text}}</router-link></p>
         </el-main>
@@ -66,6 +66,11 @@ export default {
     .page {
       display: flex;
       flex-direction: column;
+      .line {
+        width: 100%;
+        height: 1px;
+        background-color: #eee;
+      }
       .el-container {
         width: 80%;
         margin: 20px auto;
@@ -75,6 +80,10 @@ export default {
         }
         .el-header {
           line-height: 40px;
+          font-size: 25px;
+          font-weight: bold;
+          font-family: "宋体";
+          text-align: left;
         }
         .el-main {
           overflow-y: hidden;

@@ -1,7 +1,11 @@
 <template>
     <div class="main">
       <el-container>
-        <el-aside width="20%"><app-aside></app-aside></el-aside>
+        <el-collapse-transition>
+        <el-aside width="20%" v-show="isOpen">
+          <i class="el-icon-circle-close-outline asideBtn" @click="closeCard"></i>
+          <app-aside></app-aside></el-aside>
+        </el-collapse-transition>
         <el-container>
           <el-header height="120px">
             <app-header></app-header>
@@ -20,8 +24,18 @@ import appContent from '@/components/app-content.vue'
 import appFooter from '@/components/app-footer.vue'
 export default {
   name: 'app-main',
+  data () {
+    return {
+      isOpen: true
+    }
+  },
   components: {
     appHeader, appAside, appContent, appFooter
+  },
+  methods: {
+    closeCard () {
+      this.isOpen = false
+    }
   }
 }
 </script>
@@ -32,6 +46,16 @@ export default {
     height: 100%;
     .el-container {
       height: 100%;
+      .el-aside {
+        position: relative;
+        .asideBtn {
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+          font-size: 30px;
+          cursor: pointer;
+        }
+      }
     }
   }
 </style>
